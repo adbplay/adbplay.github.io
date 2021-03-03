@@ -135,9 +135,9 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
-        <li class="menu-item menu-item-tags">
+        <li class="menu-item menu-item-archives">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -145,9 +145,9 @@
     <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
-        <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-tags">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-about">
@@ -186,7 +186,7 @@
     <link itemprop="mainEntityOfPage" href="http://114.67.249.10/2021/02/28/%E7%AF%871-%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://adbplay.coding.net/p/adbplay/d/adbplay/git/raw/master/avatar.jpg">
       <meta itemprop="name" content="Player">
       <meta itemprop="description" content="">
     </span>
@@ -220,6 +220,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/02/28/%E7%AF%871-%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/02/28/%E7%AF%871-%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BAhexo%E5%8D%9A%E5%AE%A2%E4%B9%8B%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BA/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -307,6 +321,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -359,6 +374,8 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Player"
+      src="https://adbplay.coding.net/p/adbplay/d/adbplay/git/raw/master/avatar.jpg">
   <p class="site-author-name" itemprop="name">Player</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -385,8 +402,26 @@
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/adbplay" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;adbplay" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:super@adbplay.cn" title="E-Mail → mailto:super@adbplay.cn" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://coolapk.com/" title="https:&#x2F;&#x2F;coolapk.com" rel="noopener" target="_blank">酷安</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
 
@@ -466,6 +501,35 @@
   
 
   
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'mb0iT44fp5qE1bzROEic4dQs-gzGzoHsz',
+      appKey     : 'jXvVoa7FhXBghLyKtCVLnVb9',
+      placeholder: "大爷,来玩啊~",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>
